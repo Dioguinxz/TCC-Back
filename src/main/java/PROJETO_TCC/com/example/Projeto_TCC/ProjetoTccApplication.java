@@ -10,4 +10,5 @@ public class ProjetoTccApplication {
 		SpringApplication.run(ProjetoTccApplication.class, args);
 	}
 
+
 }
