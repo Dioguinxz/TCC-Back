@@ -2,8 +2,7 @@ package PROJETO_TCC.com.example.Projeto_TCC.controller;
 
 import PROJETO_TCC.com.example.Projeto_TCC.entity.Tarefa;
 import PROJETO_TCC.com.example.Projeto_TCC.service.TarefaService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,20 +15,24 @@ public class TarefaController {
         this.tarefaService = tarefaService;
     }
 
-    List<Tarefa> criarTarefa(Tarefa tarefa) {
+    @PostMapping
+    List<Tarefa> criarTarefa(@RequestBody Tarefa tarefa) {
         return tarefaService.criarTarefa(tarefa);
     }
 
+    @GetMapping
     List<Tarefa> listarTarefa() {
     return tarefaService.listarTarefa();
     }
 
-    List<Tarefa> editarTarefa(Tarefa tarefa) {
+    @PutMapping
+    List<Tarefa> editarTarefa(@RequestBody Tarefa tarefa) {
         return tarefaService.editarTarefa(tarefa);
 
     }
 
-    List<Tarefa> excluirTarefa(Long id) {
+    @DeleteMapping("{id}")
+    List<Tarefa> excluirTarefa(@PathVariable("id") Long id) {
     return tarefaService.excluirTarefa(id);
     }
 }
