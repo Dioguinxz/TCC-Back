@@ -10,7 +10,8 @@ public class Tarefa {
     private long id;
     private String nome;
     private String descricao;
-    private boolean status;
+    private boolean concluida;
+
 
     public long getId() {
         return id;
@@ -36,11 +37,12 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isConcluida() {
+        return concluida;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setConcluida(boolean concluida) {
+        this.concluida = concluida;
     }
+
 }
