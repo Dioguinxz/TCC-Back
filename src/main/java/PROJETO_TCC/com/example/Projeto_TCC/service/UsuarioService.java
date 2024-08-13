@@ -25,6 +25,11 @@ public class UsuarioService {
         return listarUsuario();
     }
 
+    public List<Usuario> editarUsuario(Usuario usuario){
+        usuarioRepository.save(usuario);
+        return listarUsuario();
+    }
+
     public List<Usuario> excluirUsuario(Long id) {
         usuarioRepository.deleteById(id);
         return listarUsuario();
