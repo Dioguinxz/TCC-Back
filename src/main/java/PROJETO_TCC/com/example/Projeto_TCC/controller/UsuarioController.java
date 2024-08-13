@@ -11,27 +11,27 @@ import java.util.List;
 public class UsuarioController {
     private UsuarioService usuarioService;
 
-    public UsuarioController(UsuarioService usuarioService){
+    public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
 
     @PostMapping
-    List<Usuario> criarUsuario(@RequestBody Usuario usuario){
+    List<Usuario> criarUsuario(@RequestBody Usuario usuario) {
         return usuarioService.criarUsuario(usuario);
     }
 
     @GetMapping
-    List<Usuario> listarUsuario(){
+    List<Usuario> listarUsuario() {
         return usuarioService.listarUsuario();
     }
 
     @PutMapping
-    List<Usuario> editarUsuario(@RequestBody Usuario usuario){
+    List<Usuario> editarUsuario(@RequestBody Usuario usuario) {
         return usuarioService.editarUsuario(usuario);
     }
 
     @DeleteMapping("{id}")
-    List<Usuario> excluirUsuario(@PathVariable("id") Long id){
+    List<Usuario> excluirUsuario(@PathVariable("id") Long id) {
         return usuarioService.excluirUsuario(id);
     }
 }

@@ -22,7 +22,7 @@ public class UsuarioService {
 
     public List<Usuario> listarUsuario(){
         Sort sort = Sort.by("nome").ascending();
-        return listarUsuario();
+        return usuarioRepository.findAll(sort);
     }
 
     public List<Usuario> editarUsuario(Usuario usuario){
