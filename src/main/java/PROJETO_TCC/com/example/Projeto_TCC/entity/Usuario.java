@@ -22,10 +22,13 @@ public class Usuario {
     @Column(name = "Senha", nullable = false)
     private String senha;
 
-//    @ElementCollection(fetch = FetchType.EAGER)
-//    @CollectionTable(name = "usuario_role", joinColumns = @JoinColumn(name = "usuario_id"))
-//    @Column(name = "role")
-//    private Set<String> roles;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id", nullable = false)
+    private Empresa empresa;
+
+    @OneToMany(mappedBy = "usuario")
+    private Set<Tarefa> tarefas;
+
 
     public long getId() {
         return id;
@@ -59,11 +62,20 @@ public class Usuario {
         this.senha = senha;
     }
 
-//    public Set<String> getRoles() {
-//        return roles;
-//    }
-//
-//    public void setRoles(Set<String> roles) {
-//        this.roles = roles;
-//    }
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Set<Tarefa> getTarefas() {
+        return tarefas;
+    }
+
+    public void setTarefas(Set<Tarefa> tarefas) {
+        this.tarefas = tarefas;
+    }
+
 }
