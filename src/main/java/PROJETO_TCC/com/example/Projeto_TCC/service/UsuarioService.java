@@ -15,17 +15,17 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public List<Usuario> criarUsuario(Usuario usuario){
+    public List<Usuario> criarUsuario(Usuario usuario) {
         usuarioRepository.save(usuario);
         return listarUsuario();
     }
 
-    public List<Usuario> listarUsuario(){
+    public List<Usuario> listarUsuario() {
         Sort sort = Sort.by("nome").ascending();
         return usuarioRepository.findAll(sort);
     }
 
-    public List<Usuario> editarUsuario(Usuario usuario){
+    public List<Usuario> editarUsuario(Usuario usuario) {
         usuarioRepository.save(usuario);
         return listarUsuario();
     }
